@@ -44,3 +44,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+PRODUCT REQUIREMENTS DOCUMENT - Color Configurator
++ 1. (epic) One way to select a color and a color scheme mode, and see a palatte based on that input
++ 2. (epic) As a user, i want a way to compare two color palettes
+- 3. (epic) i want to select color palettes and have it display on a snippet of the design system
+
+TECHNICAL DESIGN DOCUMENT
+1. (epic) One way to select a color and a color scheme mode, and see a palatte based on that input
+  + make a configuration type: seed color, scheme mode
+  + make component that takes configuration
+  + refactor ColorConfigurator to be ColorSelector. ColorConfigurator should be ColorSelector + ColorBlocks
+
+GROOMING
