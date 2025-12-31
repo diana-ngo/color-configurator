@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import ColorBlocks from '../ColorBlocks/ColorBlocks';
 import ColorSelector from '../ColorSelector/ColorSelector';
-import { Configuration } from '../../App';
+import { Configuration } from '../../types';
 import './styles.css';
 
 interface ColorConfiguratorProps {
-  configuration: Configuration
+  configuration: Configuration;
+  onThemeSelect: (colors: string[]) => void;
 }
 
-export default function ColorConfigurator({ configuration }: ColorConfiguratorProps) {
+export default function ColorConfigurator({ configuration, onThemeSelect }: ColorConfiguratorProps) {
   // initialize seed color and scheme mode
   const [ colors, setColors ] = useState([]);
 
@@ -28,6 +29,10 @@ export default function ColorConfigurator({ configuration }: ColorConfiguratorPr
     setColors(data.colors.map((color: any) => color.hex.value));
   }
 
+  function handleApplyTheme() {
+    onThemeSelect(colors);
+  }
+
   return (
     <div className='color-configurator'>
       <div>
@@ -40,6 +45,7 @@ export default function ColorConfigurator({ configuration }: ColorConfiguratorPr
           hexValues = { colors }
         />
       </div>
+      <button onClick={handleApplyTheme}>Apply Theme</button>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Configuration  } from '../../App';
+import { Configuration  } from '../../types';
 
 interface ColorSelectorProps {
   handleChange: (configuration: Configuration) => Promise<void>;

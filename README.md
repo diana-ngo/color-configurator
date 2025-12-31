@@ -57,4 +57,10 @@ TECHNICAL DESIGN DOCUMENT
   + make component that takes configuration
   + refactor ColorConfigurator to be ColorSelector. ColorConfigurator should be ColorSelector + ColorBlocks
 
+3. (epic) i want to select color palettes and have it display on a snippet of the design system
+  - create a design system (primary, secondary, and background colors)
+      buttons with hover state
+      typography: h1-5th color, h2-4th color
+  + make an "Apply theme" button 
+
 GROOMING
