@@ -61,6 +61,7 @@ TECHNICAL DESIGN DOCUMENT
   - create a design system (primary, secondary, and background colors)
       buttons with hover state
       typography: h1-5th color, h2-4th color
+      - ************** refactor: pass in Theme  *************************
   + make an "Apply theme" button 
 
 GROOMING

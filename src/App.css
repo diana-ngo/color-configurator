@@ -44,3 +44,30 @@ select {
   justify-content: space-around;
   font-size: 0.75rem;
 }
+
+/* =====================================================
+   APP LAYOUT
+   ===================================================== */
+
+.content-wrapper {
+  min-height: 100vh;
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+
+  /* Left: configurators | Right: design system */
+  grid-template-columns: 420px 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* ColorConfigurator #1 (top-left) */
+.content-wrapper > :nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* ColorConfigurator #2 (bottom-left) */
+.content-wrapper > :nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}

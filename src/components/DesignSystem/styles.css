@@ -1,0 +1,8 @@
+.ds-components {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ds-button {
+  padding: 10px 20px;
+}

@@ -14,7 +14,6 @@ export default function ColorConfigurator({ configuration, onThemeSelect }: Colo
   const [ colors, setColors ] = useState([]);
 
   useEffect(() => {
-    console.log('ColorConfigurator mounted');
     loadConfiguration(configuration);
   }, []);
 
@@ -25,7 +24,7 @@ export default function ColorConfigurator({ configuration, onThemeSelect }: Colo
     const url = `https://www.thecolorapi.com/scheme?hex=${seedColor.slice(1)}&mode=${schemeMode}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log('color fetched', data);
+
     setColors(data.colors.map((color: any) => color.hex.value));
   }
 

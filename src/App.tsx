@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import ColorConfigurator from './components/ColorConfigurator/ColorConfigurator';
+import DesignSystem from './components/DesignSystem/DesignSystem';
 import { Theme } from './types';
 
 const INITIAL_CONFIGURATION = {
@@ -9,7 +10,7 @@ const INITIAL_CONFIGURATION = {
 };
 
 const INITIAL_THEME = {
-  hexValues: ['721818ff', '721818ff', '721818ff', '721818ff', '721818ff']
+  hexValues: ['#721818ff', '#721818ff', '#721818ff', '#721818ff', '#721818ff']
 }
 
 function App() {
@@ -33,9 +34,7 @@ function App() {
         configuration={INITIAL_CONFIGURATION}
         onThemeSelect = { handleThemeSelection }
       />
-      {/* <DesignSystem 
-        theme = { theme }
-      /> */}
+      <DesignSystem theme={theme} />
     </div>
   );
 }
