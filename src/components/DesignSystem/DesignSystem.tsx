@@ -1,5 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
 import './styles.css';
+import ColorBlocks from "../ColorBlocks/ColorBlocks";
+import { useStore } from "../../App";
 
 type TextSize = 'h1' | 'h2' | 'h3' | 'subheader' | 'body' ;
 
@@ -38,47 +40,84 @@ function Button({ children, style}: ButtonProps) {
   );
 }
 
-type DesignSystemProps = {
+function ButtonContainer() {
+  const theme = useStore((state) => state.theme);
+
+  return (
+    <>
+      <Button style={{ backgroundColor: theme.primary, borderColor: theme.primary }}
+      >
+        Primary Button
+      </Button>
+
+      <Button style={{ backgroundColor: theme.secondary, borderColor: theme.secondary }}
+      >
+        Secondary Button
+      </Button>
+    </>
+  );
+}
+
+// function Accordion() {
+//   const { theme } = useContext(ThemeContext);
+
+//   const primary = theme.hexValues[0];
+//   const secondary = theme.hexValues[1];
+// }
+
+function Components() {
+  return (
+    <section className="ds-section">
+      <h2>Components</h2>
+      <div className="ds-components">
+        <ButtonContainer />
+        {/* <Accordion /> */}
+        {/* <Inputs /> */}
+      </div>
+    </section>
+  )
+}
+
+type TypographyProps = {
   theme: { hexValues: string[] };
-};
+}
 
-export default function DesignSystem({ theme }: DesignSystemProps) {
-  const primary = theme.hexValues[0];
-  const secondary = theme.hexValues[1];
-  const tertiary = theme.hexValues[2];
-  const quaternary = theme.hexValues[3];
+// function Typography({ theme }: TypographyProps) {
+//   const tertiary = theme.hexValues[2];
+//   const quaternary = theme.hexValues[3];
 
+//   return (
+//     <section className="ds-section">
+//       <h2>Typography</h2>
+//       <div className="ds-type">
+//         <Text size="h1" text="Header (H1)" style={{ color: tertiary }} />
+//         <Text size="subheader" text="Subheader — a short supporting line under a title." style={{ color: quaternary }} />
+//         <Text size="body" text="Body text — use this for normal paragraph content in your UI." style={{ color: quaternary }} />
+//       </div>
+//     </section>
+//   )
+// }
+
+type StylesProps = {
+  theme: { hexValues: string[] };
+}
+
+function Styles({ theme }: StylesProps) {
+  return (
+    <ColorBlocks hexValues={theme.hexValues}/>
+  )
+}
+
+export default function DesignSystem() {
   return (
     <div className="design-system">
       <div className="ds-header">
         <h1>Design System</h1>
       </div>
 
-      {/* COMPONENTS */}
-      <section className="ds-section">
-        <h2>Components</h2>
-        <div className="ds-components">
-          <Button style={{ backgroundColor: primary, borderColor: primary }}
-          >
-            Primary Button
-          </Button>
-
-          <Button style={{ backgroundColor: secondary, borderColor: secondary }}
-          >
-            Secondary Button
-          </Button>
-        </div>
-      </section>
-
-      {/* TYPOGRAPHY */}
-      <section className="ds-section">
-        <h2>Typography</h2>
-        <div className="ds-type">
-          <Text size="h1" text="Header (H1)" style={{ color: tertiary }} />
-          <Text size="subheader" text="Subheader — a short supporting line under a title." style={{ color: quaternary }} />
-          <Text size="body" text="Body text — use this for normal paragraph content in your UI." style={{ color: quaternary }} />
-        </div>
-      </section>
+      <Components />
+      {/* <Typography theme={theme} /> */}
+      {/* <Styles theme={theme} /> */}
     </div>
   );
 }

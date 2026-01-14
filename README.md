@@ -47,6 +47,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 PRODUCT REQUIREMENTS DOCUMENT - Color Configurator
+- Modularize -> Components; Lift up state
+- Make it scalable -> state management strategy: Context API
+
 + 1. (epic) One way to select a color and a color scheme mode, and see a palatte based on that input
 + 2. (epic) As a user, i want a way to compare two color palettes
 - 3. (epic) i want to select color palettes and have it display on a snippet of the design system

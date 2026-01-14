@@ -3,6 +3,12 @@ export interface Configuration {
   schemeMode: string
 }
 
+type HexValue = string;
+
 export interface Theme {
-  hexValues: string[]
+  hexValues: HexValue[],
+  primary: HexValue,
+  secondary: HexValue,
+  // tertiary?: HexValue,
+  // quadternary?: HexValue
 }
